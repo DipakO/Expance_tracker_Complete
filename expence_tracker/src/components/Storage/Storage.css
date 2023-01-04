@@ -1,0 +1,39 @@
+.table{
+    display: flex;
+    width: 56vw;
+    background-color: #4b4b4b;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.dateContainer{
+    display: flex;
+}
+
+
+.h3{
+    background-color: #2a2a2a;
+    width: 5rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: 1px solid white;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.title{
+    margin: auto 0px;
+}
+
+.amount{
+    margin-right: 20px;
+    background-color: #40005d;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}

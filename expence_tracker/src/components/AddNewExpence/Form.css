@@ -1,0 +1,54 @@
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0);
+    width: 60vw;
+    padding: 20px 0;
+    border-radius: 15px;
+}
+
+.mainForm{
+    display: flex;
+   margin-top: 20px;
+    justify-content: center;
+}
+
+.btnAddNew{
+    padding: 10px 40px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    background-color: rgb(255, 98, 0);
+    border: none;
+    color: white;
+    margin-left: 18rem;
+    margin-bottom: 3rem;
+}
+.btnNew{
+    padding: 3px 30px;
+    font-size: 1rem;
+    border-radius: 20px;
+    background-color: rgb(255, 98, 0);
+    border: none;
+    color: white;
+    margin-top: 10px;
+}
+
+.title{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+}
+
+input{
+    padding: 12px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    margin: 10px;
+}
+
+.pos{
+    display: flex;
+    flex-direction: column;
+}

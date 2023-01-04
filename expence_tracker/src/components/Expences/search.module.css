@@ -1,0 +1,62 @@
+.filtDiv{
+    color: white;
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+
+}
+
+.mainDiv{
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    background-color: #1f1f1f;
+    border-radius: 20px;
+   
+}
+
+.middle{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+.select{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin: 10px;
+}
+
+.filtH1{
+    font-size: 1.5rem;
+}
+
+option{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.ChartContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 58vw;
+    margin: 10px;
+}
+
+.bar{
+    border-radius: 10px;
+    background-color:gray ;
+    height: 30vh;
+    color: gray;
+    width: 50px;
+}
+
+.month{
+    color: white;
+    align-items: center;
+}

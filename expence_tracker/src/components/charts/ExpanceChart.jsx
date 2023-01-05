@@ -19,6 +19,7 @@ const ExpanceChart = ({ filteredRecords }) => {
 
   for (let record of filteredRecords) {
     let date = new Date(record.date).toDateString().split(" ")[1];
+
     let month = date;
 
     for (let row of chartDataPoints) {

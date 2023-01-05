@@ -1,0 +1,13 @@
+.updateInput{
+    border: 1px solid black;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    margin: 20PX;
+    background-color: #75E6DA;
+    padding: 20px;
+    border-radius: 20px;
+}

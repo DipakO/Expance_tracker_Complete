@@ -1,15 +1,19 @@
 import React from "react";
 import Form from "./components/AddNewExpence/Form";
-import ExpanceChart from "./components/charts/ExpanceChart";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import SearchExpence from "./components/Expences/SearchExpence";
-// import Storage from "./components/Storage";
+import UpdateForm from "./components/UpdateExpence";
 
 const App = () => {
   return (
     <div>
-      <Form />
-      <SearchExpence />
-      {/* <ExpanceChart /> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<SearchExpence />} />
+          <Route path="/updateform" element={<UpdateForm />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };

@@ -8,11 +8,11 @@ const ChartBar = (props) => {
     barHeight = Math.round((props.value / props.maxValue) * 100) + "%";
   }
 
-  if (parseInt(barHeight) > 75) {
+  if (parseInt(barHeight) >= 75) {
     overExpense = "red";
   }
 
-  if (parseInt(barHeight) > 50 && parseInt(barHeight) < 74) {
+  if (parseInt(barHeight) > 50 && parseInt(barHeight) <= 74) {
     overExpense = "#efd510";
   }
 

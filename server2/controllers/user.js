@@ -47,9 +47,13 @@ class ExpanceControllers {
 
   // Write A Function for Search Api
   static expenceSearch = async (req, res) => {
+    const val = req.params.title;
+    const textt = val[0].toUpperCase() + val.substring(1);
     const result = await ExpenceModel.find({
-      title: req.params.title,
+      title: textt,
     });
+    console.log(req.params);
+    console.log(result);
     res.send(result);
   };
 }

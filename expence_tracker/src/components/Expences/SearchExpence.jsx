@@ -20,8 +20,7 @@ const SearchExpence = () => {
   };
 
   const handleBtnClick = () => {
-    const textt = searchText[0].toUpperCase() + searchText.substring(1);
-    setText(textt);
+    setText(searchText);
   };
 
   let filteredRecords = data.filter((value) => {

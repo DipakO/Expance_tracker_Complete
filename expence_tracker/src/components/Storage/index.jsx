@@ -27,7 +27,7 @@ const Storage = ({ status, Data, text }) => {
     return total + item.amount;
   }, 0);
   useEffect(() => {
-    fetch(`http://localhost:5000/user/?${text}`)
+    fetch(`http://localhost:5000/user/${text}`)
       .then((res) => res.json())
       .then((expance) => setData(expance));
   }, [text]);
@@ -69,6 +69,7 @@ const Storage = ({ status, Data, text }) => {
                   display: "flex",
                   justifyContent: "space-between",
                   width: "20rem",
+                  alignItems: "center",
                 }}
               >
                 <button

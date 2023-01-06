@@ -8,12 +8,20 @@ import style from "./search.module.css";
 const SearchExpence = () => {
   const [status, setStatus] = useState("");
   const [data, setData] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [text, setText] = useState("");
+
   const handleChange = (e) => {
     setStatus(e.target.value);
   };
   // console.log(status);
   const Data = (records) => {
     setData(records);
+  };
+
+  const handleBtnClick = () => {
+    const textt = searchText[0].toUpperCase() + searchText.substring(1);
+    setText(textt);
   };
 
   let filteredRecords = data.filter((value) => {
@@ -42,6 +50,17 @@ const SearchExpence = () => {
                 <h1 className={style.filtH1}>filter by year</h1>
               </div>
               <div>
+                <input
+                  type="search"
+                  onChange={(e) => {
+                    setSearchText(e.target.value);
+                  }}
+                />
+                <button onClick={handleBtnClick} className={style.SearchBtn}>
+                  Search
+                </button>
+              </div>
+              <div>
                 <select
                   onChange={handleChange}
                   className={style.select}
@@ -58,7 +77,7 @@ const SearchExpence = () => {
             </div>
           </div>
           <ExpanceChart filteredRecords={filteredRecords} />
-          <Storage status={status} Data={Data} />
+          <Storage status={status} Data={Data} text={text} />
         </div>
       </div>
     </div>

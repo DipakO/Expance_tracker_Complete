@@ -1,11 +1,15 @@
 import React from "react";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import "./Storage.css";
+import { Link } from "react-router-dom";
+import { RiDeleteBin2Fill } from "react-icons/ri";
+import axios from "axios";
 
-const Storage = ({ status, Data }) => {
+const Storage = ({ status, Data, text }) => {
   const [data, setData] = useState([]);
 
+  // Filtered Data by Year
   const filtData = data.filter((value) => {
     if (status === " ") {
       return value;
@@ -14,24 +18,25 @@ const Storage = ({ status, Data }) => {
     }
   });
 
+  // Calculate Max Price in the Year
   const priceArray = filtData.map((item) => item.amount);
   const maxPrice = Math.max(...priceArray);
-  // console.log(...priceArray);
 
+  // Calculate total price in the year
   let total = filtData.reduce((total, item) => {
     return total + item.amount;
   }, 0);
-
   useEffect(() => {
-    fetch("http://localhost:5000/user")
+    fetch(`http://localhost:5000/user/?${text}`)
       .then((res) => res.json())
       .then((expance) => setData(expance));
-  }, []);
+  }, [text]);
 
   Data(data);
 
   return (
     <div className="container">
+      {/* Calculation Total Price in year And Max Price in the month */}
       {total ? (
         <h1 className="overAllSpending">
           {" "}
@@ -57,13 +62,13 @@ const Storage = ({ status, Data }) => {
             <div key={item._id} className="table">
               <div className="dateContainer">
                 <h3 className="h3">{date}</h3>
-                <h1 className="tit">{item.title}</h1>
+                <h3 className="tit">{item.title}</h3>
               </div>
               <div
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
-                  width: "18rem",
+                  width: "20rem",
                 }}
               >
                 <button
@@ -73,14 +78,32 @@ const Storage = ({ status, Data }) => {
                     border: "1px solid white",
                     borderRadius: "10px",
                     color: "white",
+                    cursor: "pointer",
                   }}
                 >
-                  Update Expence
+                  <Link
+                    className="UpdateLink"
+                    to={`/updateform/${item.title}/${item.amount}/${item.date}/${item._id}`}
+                  >
+                    Update Expences
+                  </Link>
                 </button>
-                <h1 className="amount">
+                <button
+                  className="DeleteBtn"
+                  onClick={() => {
+                    axios
+                      .delete(`http://localhost:5000/user/${item._id}`)
+                      .then((res) => console.log(res.data))
+                      .catch((err) => console.log(err));
+                    window.location.reload();
+                  }}
+                >
+                  <RiDeleteBin2Fill color="red" size={30} />
+                </button>
+                <h3 className="amount">
                   {item.amount}
                   <i className="bi bi-currency-rupee"></i>
-                </h1>
+                </h3>
               </div>
             </div>
           );

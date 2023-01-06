@@ -1,6 +1,4 @@
-.updateInput{
-    border: 1px solid black;
-}
+
 
 .form{
     display: flex;
@@ -10,4 +8,17 @@
     background-color: #75E6DA;
     padding: 20px;
     border-radius: 20px;
+}
+
+
+.BackBtn{
+    width: 8rem;
+    border-radius: 20px;
+    padding: 0px 20px;
+    border: none;
+    cursor: pointer;
+    /* text-align: center; */
+    margin-left: 7.2rem;
+    margin-top: 1rem;
+
 }

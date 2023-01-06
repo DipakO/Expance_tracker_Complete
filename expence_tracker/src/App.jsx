@@ -11,7 +11,10 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<SearchExpence />} />
-          <Route path="/updateform" element={<UpdateForm />} />
+          <Route
+            path="/updateform/:tit/:amoun/:dat/:id"
+            element={<UpdateForm />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

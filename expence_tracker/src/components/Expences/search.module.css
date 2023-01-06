@@ -60,3 +60,8 @@ option{
     color: white;
     align-items: center;
 }
+
+.SearchBtn{
+    padding: 10px;
+    border-radius: 10px;
+}

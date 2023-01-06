@@ -32,7 +32,9 @@ const Form = () => {
       amount: amount,
       date: date,
     });
+
     setHide((prev) => !prev);
+    window.location.reload();
   };
 
   return (

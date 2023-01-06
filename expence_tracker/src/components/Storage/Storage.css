@@ -55,3 +55,15 @@
     color: white;
     text-align: center;
 }
+
+.UpdateLink{
+    color: white;
+    text-decoration: none;
+}
+
+.DeleteBtn{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}

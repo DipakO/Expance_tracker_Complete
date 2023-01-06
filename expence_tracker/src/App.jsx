@@ -1,9 +1,10 @@
 import React from "react";
-import Form from "./components/AddNewExpence/Form";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import SearchExpence from "./components/Expences/SearchExpence";
 import UpdateForm from "./components/UpdateExpence";
+// import Map from "./components/Map";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           />
         </Routes>
       </BrowserRouter>
+      {/* <Map /> */}
     </div>
   );
 };
